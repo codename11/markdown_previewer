@@ -1,0 +1,83 @@
+#wrapper{
+	border: 1px solid green;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+#inner1{
+	border: 1px solid red;
+	background-color: whitesmoke;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+
+#inner2{
+	position: fixed;
+	top: 50px;
+}
+
+.btn1{
+	position: absolute;
+	bottom: -30px;
+	left: 51.3%;
+	z-index: 999;
+	background-color: whitesmoke;
+	border: 1px solid gray;
+	color: aqua;
+}
+
+#root{
+	width: 100%;
+}
+
+body{
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: whitesmoke;
+  padding: 10px;
+  grid-gap: 10px;
+  height: auto;
+  width: 100%;
+}
+
+div[className*="grid-item"]{
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+
+.grid-item3, .grid-item4 {
+	border: 1px solid red;
+	height: auto;
+	width: 100%; 	
+}
+
+.grid-item4{
+	overflow-y: scroll;	
+}
+
+textarea#editor.form-control{
+	height: 100%;
+	width: 100%;
+	resize: none;	
+}
+
+#preview{
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	border-radius: .25rem;
+	border: 1px solid #ced4da;
+}
