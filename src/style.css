@@ -1,5 +1,4 @@
 #wrapper{
-	border: 1px solid green;
 	text-align: center;
 	width: 100%;
 	height: auto;
@@ -7,7 +6,6 @@
 }
 
 #inner1{
-	border: 1px solid red;
 	background-color: whitesmoke;
 	width: 100%;
 	margin-left: auto;
@@ -59,7 +57,6 @@ div[className*="grid-item"]{
 }
 
 .grid-item3, .grid-item4 {
-	border: 1px solid red;
 	height: auto;
 	width: 100%; 	
 }
