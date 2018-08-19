@@ -6,9 +6,8 @@ import $ from 'jquery'
 import 'jquery-ui-bundle';
 import 'jquery-ui-bundle/jquery-ui.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
 import './style.css';
-
-
 
 class DisplayMessages extends React.Component {
 	constructor(props) {
@@ -21,9 +20,12 @@ class DisplayMessages extends React.Component {
 	}
 	
 	componentDidMount() {
+		
 		$("#inner2").resizable({
 			handles: 's',
 			minHeight: 85,
+			height: "100%",
+			maxHeight: "120%"
 		});
 	}
 	
@@ -54,14 +56,15 @@ class DisplayMessages extends React.Component {
 				</div>
 				
 				<div className="text-center grid-container" id="inner2">
-					<div className="text-center grid-item3">
-						<textarea className="form-control" onChange={this.handleChange} defaultValue={this.state.value} placeholder="Enter message ..." id="editor"></textarea>
+					
+					<textarea onChange={this.handleChange} defaultValue={this.state.value} placeholder="Enter ... some kind a text!? ..." id="editor"></textarea>
+					
+					<div id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}>
+					
 					</div>
-					<div className="grid-item4">
-					<pre id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}></pre>
-					</div>
+
 				</div>
-				
+		
 			</div>
 		);
 	}

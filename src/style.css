@@ -1,7 +1,7 @@
 #wrapper{
 	text-align: center;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	position: relative;
 }
 
@@ -10,12 +10,6 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	height: auto;
-}
-
-#inner2{
-	position: fixed;
-	top: 50px;
 }
 
 .btn1{
@@ -36,6 +30,7 @@ body{
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
+	background-color: whitesmoke;
 }
 
 .grid-container {
@@ -44,37 +39,62 @@ body{
   background-color: whitesmoke;
   padding: 10px;
   grid-gap: 10px;
-  height: auto;
+  height: 100%;
   width: 100%;
 }
 
-div[className*="grid-item"]{
-	background-color: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(0, 0, 0, 0.8);
-	padding: 20px;
-	font-size: 30px;
-	text-align: center;
+#inner2{
+	border-bottom: 3px solid #d6e9c6;
+	margin-bottom: 1px;	
+	background-color: #fcf8e3;
+	height: 99vh;
 }
 
-.grid-item3, .grid-item4 {
+#editor{
+	background-color: white;
 	height: auto;
-	width: 100%; 	
-}
-
-.grid-item4{
-	overflow-y: scroll;	
-}
-
-textarea#editor.form-control{
-	height: 100%;
-	width: 100%;
-	resize: none;	
+	resize: none;
+	color: #495057;
+	border: 1px solid #ced4da;
+    border-radius: .25rem;
+	overflow-y: auto;
+	max-height: 100%;
 }
 
 #preview{
-	height: 100%;
-	width: 100%;
+	height: auto;
 	background-color: white;
 	border-radius: .25rem;
 	border: 1px solid #ced4da;
+	overflow-y: auto;
+	max-height: 100%;
+	margin-right: 10px;
+}
+
+label{
+	font-family: Palatino Linotype;
+	font-size: 2em;
+	padding-bottom: 0px;
+	width: 100%;
+	background-color: #fcf8e3;
+}
+
+#inner1{
+	padding: 0px;
+	margin-bottom: -16px;
+	grid-gap: 0px;
+}
+
+.ui-resizable-s {
+    cursor: row-resize;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+@media screen and (max-height: 768px) {
+	#inner2{
+		height: 90vh;
+	}
 }
