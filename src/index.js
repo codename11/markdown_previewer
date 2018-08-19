@@ -62,12 +62,10 @@ class DisplayMessages extends React.Component {
 					
 					<textarea onChange={this.handleChange} defaultValue={placeholder} placeholder="Enter ... some kind a text!? ..." id="editor"></textarea>
 					
-					<div id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}>
-					
-					</div>
+					<div id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}></div>
 						
 				</div>
-		<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
+				<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
 			</div>
 		);
 	}
