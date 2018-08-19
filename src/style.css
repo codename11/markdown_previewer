@@ -95,6 +95,6 @@ textarea:focus, input:focus{
 
 @media screen and (max-height: 768px) {
 	#inner2{
-		height: 90vh;
+		height: 92vh;
 	}
 }
