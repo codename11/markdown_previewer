@@ -48,6 +48,9 @@ body{
 	margin-bottom: 1px;	
 	background-color: #fcf8e3;
 	height: 99vh;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
 }
 
 #editor{
@@ -59,6 +62,9 @@ body{
     border-radius: .25rem;
 	overflow-y: auto;
 	max-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
 }
 
 #preview{
@@ -68,7 +74,9 @@ body{
 	border: 1px solid #ced4da;
 	overflow-y: auto;
 	max-height: 100%;
-	margin-right: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
 }
 
 label{
@@ -83,6 +91,9 @@ label{
 	padding: 0px;
 	margin-bottom: -16px;
 	grid-gap: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
 }
 
 .ui-resizable-s {
