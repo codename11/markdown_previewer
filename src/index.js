@@ -68,10 +68,10 @@ class DisplayMessages extends React.Component {
 			<div className="text-center grid-container" id="inner2">
 			<label className="grid-item1">Editor:</label><label className="grid-item2">Previewer:</label>	
 				
-				<textarea onChange={this.handleChange} defaultValue={placeholder} placeholder="Enter ... some kind a text!? ..." id="editor"></textarea>
-				
-				<div id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}></div>
-					<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
+			<textarea onChange={this.handleChange} defaultValue={placeholder} placeholder="Enter ... some kind a text!? ..." id="editor"></textarea>	
+			<div id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}></div>
+			
+			<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
 			</div>
 				
 			
