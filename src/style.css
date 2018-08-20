@@ -1,10 +1,14 @@
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
-#wrapper{
+/*#wrapper{
 	text-align: center;
 	width: 100%;
-	height: 100%;
-}
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid red;
+	height: 80%;
+}*/
 
 .btn1{
 	position: absolute;
@@ -18,13 +22,20 @@
 
 #root{
 	width: 100%;
+	
+}
+
+body, html {
+    height: 100%;
 }
 
 body{
-	width: 100%;
-	padding: 0px;
-	margin: 0px;
 	background-color: whitesmoke;
+	background-image: url("react1.png"), url("react2.png");
+	background-repeat:no-repeat;
+	background-size: auto;
+	background-position:center bottom;
+	overflow: hidden;
 }
 
 .grid-container {
@@ -33,51 +44,47 @@ body{
   background-color: whitesmoke;
   padding: 10px;
   grid-gap: 10px;
-  height: 100%;
   width: 100%;
-}
-
-#inner1{
-	padding: 0px;
-	margin-bottom: -16px;
-	grid-gap: 0px;
-	background-color: whitesmoke;
-	width: 100%;
-	text-align:center;
-	height: auto;
+  grid-template-rows: 30px 95%;
 }
 
 #inner2{
 	border-bottom: 3px solid #d6e9c6;
 	padding-bottom: 35px;	
 	background-color: #fcf8e3;
-	width: 100%;
-	height: auto;
 	text-align: center;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	min-height: 20%;
+	max-height: 100%;
 }
 
 #editor{
 	width: 100%;
-	height: auto;
-	max-height: auto;
 	background-color: white;
 	resize: none;
 	color: #495057;
 	border: 1px solid #ced4da;
     border-radius: .25rem;
 	overflow-y: auto;
+	max-height:100%;
+	min-height: 40px;
 }
 
 #preview{
-	width: 100%;
-	height: auto;
-	max-height: auto;
+	width: 98.9%;
 	background-color: white;
 	border-radius: .25rem;
 	border: 1px solid #ced4da;
 	overflow-y: auto;
-	margin-left: auto;
-	margin-right: auto;
+	overflow-x: hidden;
+	max-height:100%;
+	min-height: 40px;
 }
 
 label{
@@ -89,6 +96,7 @@ label{
 	padding-bottom: 0px;
 	width: 100%;
 	background-color: #fcf8e3;
+	min-height: 50px;
 }
 
 .ui-resizable-s {
@@ -100,16 +108,28 @@ textarea:focus, input:focus{
 }
 
 #arrow{
-	margin-top: -16px;
-	margin-left: 10px;
+	background-color: #dff0d8;
+	width: 100%;
+	height: 15px;
+	position: absolute;
+	bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 	font-size: 1.5em;
 }
 
 .glyphicon{
+	top: -4px;
+	left: 4px;
 	color: #d6e9c6;
-	-ms-transform: scale(1.2, 0.8); /* IE 9 */
-    -webkit-transform: scale(1.2, 0.8); /* Safari */
-    transform: scale(1.2, 0.8);
+	color: gray;
+	-ms-transform: scale(1, 0.6); /* IE 9 */
+    -webkit-transform: scale(1, 0.6); /* Safari */
+    transform: scale(1, 0.6);
+}
+
+#erase{
+	grid-column: 1 / span 2;
 }
 
 @media screen and (max-height: 600px) {

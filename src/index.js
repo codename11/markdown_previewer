@@ -19,6 +19,17 @@ class DisplayMessages extends React.Component {
 			messages: [placeholder]
 		}
 		this.handleChange = this.handleChange.bind(this);
+		this.eraseIt = this.eraseIt.bind(this);
+	}
+	
+	eraseIt(event){
+		
+		this.setState({
+			
+			defaultValue: ""
+			
+		});
+		
 	}
 	
 	componentDidMount() {
@@ -26,20 +37,21 @@ class DisplayMessages extends React.Component {
 		$("#inner2").resizable({
 			handles: 's',
 			minHeight: 85,
-			height: "100%",
-			maxHeight: "120%"
+			height: "30%"
 		});
 	}
 	
 	handleChange(event){
 
 		this.setState({
-			
+			input: '',
 			messages: [event.target.value]
 			
 		});
 	console.log(this.state.messages);
 	}
+	
+	
 	
 	getMarkdownText() {
 		var message = this.state.messages.join("");
@@ -51,22 +63,18 @@ class DisplayMessages extends React.Component {
 	render(){
 
 		return (
-			<div id="wrapper">
+			
 				
-				<div className="text-center grid-container" id="inner1">
+			<div className="text-center grid-container" id="inner2">
+			<label className="grid-item1">Editor:</label><label className="grid-item2">Previewer:</label>	
 				
-				<div className="grid-item1"><label>Editor:</label></div><div className="grid-item2"><label>Previewer:</label></div>	
-				</div>
+				<textarea onChange={this.handleChange} defaultValue={placeholder} placeholder="Enter ... some kind a text!? ..." id="editor"></textarea>
 				
-				<div className="text-center grid-container" id="inner2">
-					
-					<textarea onChange={this.handleChange} defaultValue={placeholder} placeholder="Enter ... some kind a text!? ..." id="editor"></textarea>
-					
-					<div id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}></div>
-						
-				</div>
-				<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
+				<div id="preview" dangerouslySetInnerHTML={this.getMarkdownText()}></div>
+					<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
 			</div>
+				
+			
 		);
 	}
 };
