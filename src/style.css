@@ -34,12 +34,12 @@ body{
 	padding: 10px;
 	grid-gap: 10px;
 	width: 100%;
-	grid-template-rows: 30px 95%;
+	grid-template-rows: 30px 25px 98%;
 }
 
 #inner2{
-	border-bottom: 3px solid #d6e9c6;
-	padding-bottom: 35px;	
+	border-bottom: 15px solid #d6e9c6;
+	padding-bottom: 55px;	
 	background-color: #fcf8e3;
 	text-align: center;
 	width: 100%;
@@ -63,6 +63,7 @@ body{
 	overflow-y: auto;
 	max-height:100%;
 	min-height: 40px;
+	margin-bottom: 40px;
 }
 
 #preview{
@@ -74,6 +75,7 @@ body{
 	overflow-x: hidden;
 	max-height:100%;
 	min-height: 40px;
+	margin-bottom: 40px;
 }
 
 label{
@@ -101,10 +103,11 @@ textarea:focus, input:focus{
 	width: 100%;
 	height: 15px;
 	position: absolute;
-	bottom: 0px;
+	bottom: -12px;
 	padding-left: 0px;
 	padding-right: 0px;
 	font-size: 1.5em;
+	border-bottom: 1px solid #d6e9c6;
 }
 
 .glyphicon{
@@ -125,4 +128,8 @@ textarea:focus, input:focus{
 	#inner2{
 		height: 90vh !important;
 	}
+}
+
+#erase{
+	grid-column: 1 / 3;
 }
