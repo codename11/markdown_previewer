@@ -186,3 +186,11 @@ label:hover{
 	height : 100%;
 	z-index: 999;
 }
+
+h1{
+	border-bottom: 2px solid #224B4B;
+}
+
+h2{
+	border-bottom: 1px solid #224B4B;
+}
