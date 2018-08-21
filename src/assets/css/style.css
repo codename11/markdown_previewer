@@ -20,7 +20,7 @@ body, html {
 
 body{
 	background-color: whitesmoke;
-	background-image: url("react1.png"), url("react2.png");
+	background-image: url("../images/react1.png"), url("../images/react2.png");
 	background-repeat:no-repeat;
 	background-size: auto;
 	background-position:center bottom;
