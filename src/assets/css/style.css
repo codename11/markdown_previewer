@@ -81,7 +81,7 @@ body{
 	margin-bottom: 40px;
 }
 
-label{
+#item1, #item2{
 	font-family: 'Russo One';
 	font-style: oblique;
 	font-weight: bold;
@@ -145,6 +145,11 @@ pre.box1{
     padding: 5px 0 5px 5px;
 }
 
+.bx{
+	background-color: red;
+	width: 100%;
+}
+
 pre{
 	background-color: #d6e9c6;
 	overflow: hidden;
@@ -166,7 +171,7 @@ td, th{
     padding-right: 5px;
 }
 
-label:hover{
+#item1, #item2:hover{
 	cursor: pointer; 
 }
 
@@ -180,7 +185,7 @@ label:hover{
 
 .preview-editor{
 	position : fixed;
-	top : 40px;
+	top : 55px;
 	left : 0px;
 	min-width : 100%;
 	height : 100%;
@@ -193,4 +198,8 @@ h1{
 
 h2{
 	border-bottom: 1px solid #224B4B;
+}
+
+#item1, #item2{
+	border-bottom: none;
 }
