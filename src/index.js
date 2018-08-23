@@ -24,12 +24,21 @@ class DisplayMessages extends React.Component {
 		super(props);
 		this.state = {
 			markdown: placeholder,
-			erase: false
+			erase: false,
+			headEdKlasa: "grid-item",
+			headViewKlasa: "grid-item",
+			editorKlasa: "",
+			previewKlasa: "",
+			stilEditor: {},
+			stilPreview: {},
+			attr: "Click on me for fullscreen",
+			width: window.innerWidth,
+			height: window.innerHeight
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.eraseFields = this.eraseFields.bind(this);
 	}
-	
+
 	eraseFields(){
 		
 		this.setState({
@@ -64,24 +73,15 @@ class DisplayMessages extends React.Component {
 	}
 	
 	componentDidMount() {
-
-		var arrow = document.getElementById("arrow").offsetTop;
 		
-		$("#inner2").resizable({
+		this.node = ReactDOM.findDOMNode(this);
+		$(this.node).resizable({
 			handles: 's',
 			minHeight: 170
 		});
 
-		$( "code" ).wrapInner( "<pre class='box1'></pre>");
-
-		$( "blockquote>p" ).prepend( "<span class='box2'>......</span><span class='box3'></span>");
+		document.querySelector('.ui-resizable-handle.ui-resizable-s').setAttribute("title", "Double click on me or pull me down to full height");
 		
-		window.onresize = function(event) {
-			if(arrow !== document.getElementById("arrow").offsetTop){
-				document.querySelector('.ui-resizable-handle.ui-resizable-s').setAttribute("title", "Double click on me or pull me down to full height");
-			}
-		};
-
 	}
 	
 	inner2Height(){
@@ -90,38 +90,52 @@ class DisplayMessages extends React.Component {
 
 	fullScreen(clicked_id){
 		counter1 ++;
+	
+		
 		if(clicked_id==="item1" && counter1===1){
 			
-			document.getElementById(clicked_id).setAttribute("title", "Click again to go back!");
-			document.getElementById(clicked_id).classList.add("label");
-			document.getElementById("editor").classList.add("preview-editor");
-			document.getElementById("preview").style.display = "none";
+			this.setState({
+				headEdKlasa: this.state.headEdKlasa + " label",
+				attr: "Click again to go back!",
+				editorKlasa: "preview-editor",
+				stilPreview: {display: "none"}
+			});
+			
 		}
 		
 		if(clicked_id==="item1" && counter1===2){
 			
-			document.getElementById(clicked_id).setAttribute("title", "Click on me for fullscreen");
-			document.getElementById(clicked_id).classList.remove("label");
-			document.getElementById("editor").classList.remove("preview-editor");
-			document.getElementById("preview").style.display = "block";
+			this.setState({
+				headEdKlasa: this.state.headEdKlasa.substr(0, 9),
+				attr: "Click on me for fullscreen",
+				editorKlasa: "",
+				stilPreview: {display: "block"}
+			});
+
 			counter1 = 0;
 				
 		}
 		
 		if(clicked_id==="item2" && counter1===1){
 			
-			document.getElementById(clicked_id).setAttribute("title", "Click again to go back!");
-			document.getElementById(clicked_id).classList.add("label");
-			document.getElementById("preview").classList.add("preview-editor");
-			document.getElementById("editor").style.display = "none";
+			this.setState({
+				headViewKlasa: this.state.headViewKlasa + " label",
+				attr: "Click again to go back!",
+				previewKlasa: "preview-editor",
+				stilEditor: {display: "none"}
+			});
+			
 		}
 		
 		if(clicked_id==="item2" && counter1===2){
 			
-			document.getElementById(clicked_id).setAttribute("title", "Click on me for fullscreen");
-			document.getElementById(clicked_id).classList.remove("label");
-			document.getElementById("preview").classList.remove("preview-editor");
-			document.getElementById("editor").style.display = "block";
+			this.setState({
+				headViewKlasa: this.state.headViewKlasa.substr(0, 9),
+				attr: "Click on me for fullscreen",
+				previewKlasa: "",
+				stilEditor: {display: "block"}
+			});
+
 			counter1 = 0;
 				
 		}
@@ -136,12 +150,13 @@ class DisplayMessages extends React.Component {
 				
 			<div className="grid-container" id="inner2" onDoubleClick={this.inner2Height}>
 	
-			<h1 className="grid-item1" title="Click on me for fullscreen" id="item1" onClick={handleClick}>Editor:</h1><h1 className="grid-item2" title="Click on me for fullscreen" id="item2" onClick={handleClick}>Previewer:</h1>	
+			<h1 style={this.state.stilEditor} className={this.state.headEdKlasa} title={this.state.attr} id="item1" onClick={handleClick}>Editor:</h1>
+			<h1 style={this.state.stilPreview} className={this.state.headViewKlasa} title={this.state.attr} id="item2" onClick={handleClick}>Previewer:</h1>	
 			
 			<div id="erase"><button id="eraser" onClick={this.eraseFields} type="button" className="btn btn-danger btn-lg" title="Erase & populate both fields">{btnText}</button></div>
 			
-			<textarea id="editor" className="editor1" onChange={this.handleChange} value={this.state.markdown} placeholder="Enter ... some kind a text!? ..." title="This is rather obvious isn't it? It's editor window Sherlock :D"></textarea>	
-			<div id="preview" className="preview1" dangerouslySetInnerHTML={{__html: marked(this.state.markdown, { renderer: renderer })}} title="It's a preview window, Sherlock ;)"></div>
+			<textarea id="editor" className={this.state.editorKlasa} onChange={this.handleChange} value={this.state.markdown} placeholder="Enter ... some kind a text!? ..." title="This is rather obvious isn't it? It's editor window Sherlock :D"></textarea>	
+			<div id="preview" className={this.state.previewKlasa} dangerouslySetInnerHTML={{__html: marked(this.state.markdown, { renderer: renderer })}} title="It's a preview window, Sherlock ;)"></div>
 			
 			<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
 	

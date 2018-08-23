@@ -37,7 +37,7 @@ body{
 	grid-template-rows: 30px 25px 98%;
 }
 
-.grid-item1, .grid-item2{
+.grid-item{
 	text-align: center;
 }
 
@@ -138,7 +138,7 @@ textarea:focus, input:focus{
 /*Additional styling*/
 
 pre.box1{
-	color: blue !important;
+	color: blue;
 	width: 100%;
 	display: inline;
 	background: #d6e9c6;
@@ -177,7 +177,7 @@ td, th{
 
 .label{
 	position : absolute; 
-	top : 0px;
+	top : -10px;
 	left : 0px;
 	min-width : 100%;
 	z-index: 999;
@@ -202,4 +202,16 @@ h2{
 
 #item1, #item2{
 	border-bottom: none;
+}
+
+code{
+	background-color: #d6e9c6;
+	color: #e83e8c !important;
+}
+
+
+blockquote{
+	border-left: 2px solid black;
+	padding-left: 5px;
+    margin-left: 25px;
 }
