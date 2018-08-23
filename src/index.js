@@ -17,14 +17,13 @@ renderer.link = function( href, title, text ) {
   return '<a target="_blank" href="'+ href +'" title="' + title + '">' + text + '</a>';
 };
 
-var counter1 = 0;
-//http://localhost:3000
 class DisplayMessages extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			markdown: placeholder,
 			erase: false,
+			goFull: false,
 			headEdKlasa: "grid-item",
 			headViewKlasa: "grid-item",
 			editorKlasa: "",
@@ -32,11 +31,12 @@ class DisplayMessages extends React.Component {
 			stilEditor: {},
 			stilPreview: {},
 			attr: "Click on me for fullscreen",
-			width: window.innerWidth,
-			height: window.innerHeight
+			inner2H: "",
+			h2Inner: false
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.eraseFields = this.eraseFields.bind(this);
+		this.inner2Height = this.inner2Height.bind(this);
 	}
 
 	eraseFields(){
@@ -85,59 +85,71 @@ class DisplayMessages extends React.Component {
 	}
 	
 	inner2Height(){
-		document.getElementById("inner2").style.height = "100%";
+		
+		if(this.state.h2Inner===false){
+			this.setState({
+				inner2H: "100%",
+				h2Inner: true
+			});
+		}
+		
+		if(this.state.h2Inner===true){
+			this.setState({
+				inner2H: "",
+				h2Inner: false
+			});
+		}
+		
 	}
 
 	fullScreen(clicked_id){
-		counter1 ++;
-	
 		
-		if(clicked_id==="item1" && counter1===1){
+		if(clicked_id==="item1" && this.state.goFull===false){
 			
 			this.setState({
 				headEdKlasa: this.state.headEdKlasa + " label",
 				attr: "Click again to go back!",
 				editorKlasa: "preview-editor",
-				stilPreview: {display: "none"}
+				stilPreview: {display: "none"},
+				goFull: true
 			});
 			
 		}
 		
-		if(clicked_id==="item1" && counter1===2){
+		if(clicked_id==="item1" && this.state.goFull===true){
 			
 			this.setState({
 				headEdKlasa: this.state.headEdKlasa.substr(0, 9),
 				attr: "Click on me for fullscreen",
 				editorKlasa: "",
-				stilPreview: {display: "block"}
+				stilPreview: {display: "block"},
+				goFull: !this.state.goFull
 			});
-
-			counter1 = 0;
 				
 		}
 		
-		if(clicked_id==="item2" && counter1===1){
+		if(clicked_id==="item2" && this.state.goFull===false){
 			
 			this.setState({
 				headViewKlasa: this.state.headViewKlasa + " label",
 				attr: "Click again to go back!",
 				previewKlasa: "preview-editor",
-				stilEditor: {display: "none"}
+				stilEditor: {display: "none"},
+				goFull: true
 			});
 			
 		}
 		
-		if(clicked_id==="item2" && counter1===2){
+		if(clicked_id==="item2" && this.state.goFull===true){
 			
 			this.setState({
 				headViewKlasa: this.state.headViewKlasa.substr(0, 9),
 				attr: "Click on me for fullscreen",
 				previewKlasa: "",
-				stilEditor: {display: "block"}
+				stilEditor: {display: "block"},
+				goFull: !this.state.goFull
 			});
 
-			counter1 = 0;
-				
 		}
 		
 	}
@@ -148,7 +160,7 @@ class DisplayMessages extends React.Component {
 	
 		return (
 				
-			<div className="grid-container" id="inner2" onDoubleClick={this.inner2Height}>
+			<div className="grid-container" style={{height: this.state.inner2H}} id="inner2" onDoubleClick={this.inner2Height}>
 	
 			<h1 style={this.state.stilEditor} className={this.state.headEdKlasa} title={this.state.attr} id="item1" onClick={handleClick}>Editor:</h1>
 			<h1 style={this.state.stilPreview} className={this.state.headViewKlasa} title={this.state.attr} id="item2" onClick={handleClick}>Previewer:</h1>	
