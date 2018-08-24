@@ -161,7 +161,9 @@ class DisplayMessages extends React.Component {
 
 		return (
 			
-			<Rnd className="grid-container" style={{height: this.state.inner2H, display: "grid"}} id="inner2" onDoubleClick={this.inner2Height} default={{x: 0, y: 0, width: "100%", height: "100%"}} /*lockAspectRatio={16/9}*/ enableResizing={false,{top:true}} disableDragging={true}><h1 style={this.state.stilEditor} className={this.state.headEdKlasa} title={this.state.attr} id="item1" onClick={handleClick}>Editor:</h1>
+			<Rnd className="grid-container" style={{height: this.state.inner2H, display: "grid", bottom: "50px"}} id="inner2" onDoubleClick={this.inner2Height} default={{x: 0, y: 0, width: "100%", height: "1000"}} enableResizing={false,{top:true}} disableDragging={true} maxHeight={"930"} minHeight={"330"}>
+			<div id="arrow"><span className="glyphicon glyphicon-align-justify"></span></div>
+			<h1 style={this.state.stilEditor} className={this.state.headEdKlasa} title={this.state.attr} id="item1" onClick={handleClick}>Editor:</h1>
 			<h1 style={this.state.stilPreview} className={this.state.headViewKlasa} title={this.state.attr} id="item2" onClick={handleClick}>Previewer:</h1>	
 			
 			<div id="erase"><button id="eraser" onClick={this.eraseFields} type="button" className="btn btn-danger btn-lg" title="Erase & populate both fields">{btnText}</button></div>
