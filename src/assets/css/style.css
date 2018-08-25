@@ -130,10 +130,13 @@ textarea:focus, input:focus{
 	}
 }
 
-#erase{
+#eraser{
 	text-align: center;
 	grid-column: 1 / 3;
 	z-index: 2;
+	line-height: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*Additional styling*/
@@ -216,10 +219,3 @@ blockquote{
 	padding-left: 5px;
     margin-left: 25px;
 }
-
-/*#inner2{
-	top: -160px;
-	height: 0px;
-	width: 40%;
-	left: 35%;
-}*/
