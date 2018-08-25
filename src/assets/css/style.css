@@ -91,6 +91,7 @@ body{
 	width: 100%;
 	background-color: #fcf8e3;
 	min-height: 50px;
+	border-bottom: none;
 }
 
 .ui-resizable-s {
@@ -118,7 +119,6 @@ textarea:focus, input:focus{
 	top: -4px;
 	left: 4px;
 	color: #d6e9c6;
-	color: gray;
 	-ms-transform: scale(1, 0.6); /* IE 9 */
     -webkit-transform: scale(1, 0.6); /* Safari */
     transform: scale(1, 0.6);
@@ -202,10 +202,6 @@ h1{
 
 h2{
 	border-bottom: 1px solid #224B4B;
-}
-
-#item1, #item2{
-	border-bottom: none;
 }
 
 code{
