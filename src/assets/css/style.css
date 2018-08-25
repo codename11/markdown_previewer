@@ -118,7 +118,7 @@ textarea:focus, input:focus{
 .glyphicon{
 	top: -4px;
 	left: 4px;
-	color: #d6e9c6;
+	color: gray;
 	-ms-transform: scale(1, 0.6); /* IE 9 */
     -webkit-transform: scale(1, 0.6); /* Safari */
     transform: scale(1, 0.6);
