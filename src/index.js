@@ -116,7 +116,7 @@ class DisplayMessages extends React.Component {
 				stilEditor: {paddingTop: "0px"},
 				goFull: true
 			});
-			alert("1");
+
 		}
 		
 		if(clicked_id==="ggEd" && this.state.goFull===true){
@@ -129,8 +129,7 @@ class DisplayMessages extends React.Component {
 				stilEditor: {paddingTop: "10px"},
 				goFull: !this.state.goFull
 			});
-			alert("2");
-				
+
 		}
 		
 		if(clicked_id==="ggPrev" && this.state.goFull===false){
@@ -143,7 +142,7 @@ class DisplayMessages extends React.Component {
 				stilPreview: {paddingTop: "0px"},
 				goFull: true
 			});
-			alert("3");
+
 		}
 		
 		if(clicked_id==="ggPrev" && this.state.goFull===true){
@@ -156,10 +155,9 @@ class DisplayMessages extends React.Component {
 				stilPreview: {paddingTop: "10px"},
 				goFull: !this.state.goFull
 			});
-			alert("4");
+
 		}
 
-		console.log(clicked_id);
 	}
 
 	handleChange(event){
