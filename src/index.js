@@ -113,9 +113,10 @@ class DisplayMessages extends React.Component {
 				attr: "Click again to go back!",
 				editorKlasa: "preview-editor",
 				stilPreview: {display: "none"},
+				stilEditor: {paddingTop: "0px"},
 				goFull: true
 			});
-			
+			alert("1");
 		}
 		
 		if(clicked_id==="ggEd" && this.state.goFull===true){
@@ -125,8 +126,10 @@ class DisplayMessages extends React.Component {
 				attr: "Click on me for fullscreen",
 				editorKlasa: "",
 				stilPreview: {display: "block"},
+				stilEditor: {paddingTop: "10px"},
 				goFull: !this.state.goFull
 			});
+			alert("2");
 				
 		}
 		
@@ -137,9 +140,10 @@ class DisplayMessages extends React.Component {
 				attr: "Click again to go back!",
 				previewKlasa: "preview-editor",
 				stilEditor: {display: "none"},
+				stilPreview: {paddingTop: "0px"},
 				goFull: true
 			});
-			
+			alert("3");
 		}
 		
 		if(clicked_id==="ggPrev" && this.state.goFull===true){
@@ -149,9 +153,10 @@ class DisplayMessages extends React.Component {
 				attr: "Click on me for fullscreen",
 				previewKlasa: "",
 				stilEditor: {display: "block"},
+				stilPreview: {paddingTop: "10px"},
 				goFull: !this.state.goFull
 			});
-
+			alert("4");
 		}
 
 		console.log(clicked_id);
