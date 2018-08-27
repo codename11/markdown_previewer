@@ -38,6 +38,8 @@ body {
 
 .grid-item {
   text-align: center;
+  margin-top: 10px !important;
+  padding-top: 10px !important;
 }
 
 #inner2 {
@@ -92,7 +94,8 @@ body {
   background-color: #fcf8e3;
   min-height: 50px;
   border-bottom: none;
-  padding-top: 10px;
+  margin-top: 10px !important;
+  padding-top: 10px !important;
 }
 
 .insignia {
@@ -177,6 +180,8 @@ td, th {
 }
 
 h1 {
+  margin-top: 10px !important;
+  padding-top: 10px !important;
   border-bottom: 2px solid #224B4B;
 }
 
