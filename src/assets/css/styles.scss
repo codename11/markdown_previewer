@@ -146,12 +146,6 @@ textarea:focus, input:focus{
     transform: scale(1, 0.6);
 }
 
-@media screen and (max-height: 600px) {
-	#inner2{
-		height: 90vh !important;
-	}
-}
-
 #eraser{
 	text-align: center;
 	grid-column: 1 / 3;
