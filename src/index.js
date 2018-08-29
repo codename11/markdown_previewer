@@ -74,7 +74,7 @@ class DisplayMessages extends React.Component {
 		
 	};
 	
-	componentDidMount() {
+	/*componentDidMount() {
 		
 		this.node = ReactDOM.findDOMNode(this);
 		$(this.node).resizable({
@@ -84,7 +84,7 @@ class DisplayMessages extends React.Component {
 
 		document.querySelector('.ui-resizable-handle.ui-resizable-s').setAttribute("title", "Double click on me or pull me down to full height");
 		
-	}
+	}*/
 	
 	inner2Height(){
 		
