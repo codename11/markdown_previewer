@@ -31,7 +31,7 @@ body{
 	background-repeat:no-repeat;
 	background-size: $car;
 	background-position:center bottom;
-	overflow: hidden;
+	overflow: auto;
 }
 
 .grid-container {
@@ -206,7 +206,7 @@ blockquote{
     margin-left: 25px;
 }
 
-@media only screen and (max-width: 768px) {
+/*@media only screen and (max-width: 768px) {
     img{
 		width: 100%;
 	}
@@ -229,10 +229,77 @@ blockquote{
 	}
 	
 	#item1, #item2 {
-		/*margin-top: 32px !important;*/
+		
 		margin-top: 25px !important;
 	}
 	
+}
+*/
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    display: flex;
+	flex-direction: column;
+  }
+  
+	#editor{
+		height: 100% !important;
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+	}
+
+	#preview{
+		height: 100% !important;
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+	}
+
+	  img {
+		width: 100%;
+	  }
+
+	  #ggED {
+		text-align: left;
+	  }
+
+	  #ggPrev {
+		text-align: right;
+	  }
+
+	  .insignia, .insignia:hover {
+		letter-spacing: 0px !important;
+		font-size: 1em !important;
+	  }
+
+	  #item1, #item2 {
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+		line-height: 50px;
+	  }
+	  
+	  #inner2{
+			padding: 0px;
+	  }
+	  
+	  #eraser{
+		margin-top: 10px !important;
+		margin-bottom: 10px !important;
+		padding-bottom: 10px !important;
+		line-height: 10px !important; 
+	  }
+	  
+	  #arrow{
+		left: 0px;
+	  }
+	  
+	  .glyphicon {
+		left: 0px;
+	  }
 }
 
 /*

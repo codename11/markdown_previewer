@@ -42,12 +42,42 @@ class DisplayMessages extends React.Component {
 			stilEditor: {},
 			attr: "Click on me for fullscreen",
 			inner2H: "",
-			h2Inner: false
+			h2Inner: false,
+			myWidth: null
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.eraseFields = this.eraseFields.bind(this);
 		this.inner2Height = this.inner2Height.bind(this);
+		this.myInput = React.createRef();
 	}
+	
+	updateDimensions() {
+    if (window.innerWidth <= 768) {
+      this.setState({
+        myWidth: window.innerWidth
+      });
+    } else {
+      let update_width = window.innerWidth;
+      this.setState({
+        myWidth: update_width
+      });
+    }
+  }
+
+  /**
+   * Add event listener
+   */
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions.bind(this));
+  }
+
+  /**
+   * Remove event listener
+   */
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions.bind(this));
+  }
 
 	eraseFields(){
 		
@@ -168,29 +198,56 @@ class DisplayMessages extends React.Component {
 
 	}
 	
+	
+	
 	render(){
 	
 	const btnText = this.state.erase ? "Populate" : "Erase" ;
 	const handleClick = e => this.fullScreen(e.target.id);
+	
+	const EditorHead1 = <EditorHead id={"item1"} style={this.state.stilEditor} className={this.state.headEdKlasa} onClick={handleClick} title={this.state.attr}/>;
+	const PreviewHead1 = <PreviewHead id={"item2"} style={this.state.stilPreview} className={this.state.headViewKlasa} onClick={handleClick} title={this.state.attr}/>;
+	const BtnEraser1 = <BtnEraser id={"eraser"} onClick={this.eraseFields} type={"button"} className={"btn btn-danger btn-lg"} title={"Erase & populate both fields"} value={btnText}/>;
+	const Editor1 = <Editor id={"editor"} onChange={this.handleChange} className={this.state.editorKlasa} value={this.state.markdown} placeholder={"Enter ... some kind a text!? ..."} title={"This is rather obvious isnt it? Its editor window Sherlock :D"}/>;
+	const Preview1 = <Preview id={"preview"} className={this.state.previewKlasa} dangerouslySetInnerHTML={{__html: marked(this.state.markdown, { renderer: renderer })}} title={"Its a preview window, Sherlock ;)"}/>;
+	const Arrow1 = <Arrow id={"arrow"}/>;
+
+	if(this.state.myWidth<=768){
+		console.log("Alternative");
+		console.log(this.state.myWidth);
 		return (
 				
-			<div id="inner2" className="grid-container animated zoomIn" style={{height: this.state.inner2H}} onDoubleClick={this.inner2Height}>
-	
-			<EditorHead id={"item1"} style={this.state.stilEditor} className={this.state.headEdKlasa} onClick={handleClick} title={this.state.attr}/>
-			
-			<PreviewHead id={"item2"} style={this.state.stilPreview} className={this.state.headViewKlasa} onClick={handleClick} title={this.state.attr}/>
-			
-			<BtnEraser id={"eraser"} onClick={this.eraseFields} type={"button"} className={"btn btn-danger btn-lg"} title={"Erase & populate both fields"} value={btnText}/>
-			
-			<Editor id={"editor"} onChange={this.handleChange} className={this.state.editorKlasa} value={this.state.markdown} placeholder={"Enter ... some kind a text!? ..."} title={"This is rather obvious isn't it? It's editor window Sherlock :D"}/>
-			
-			<Preview id={"preview"} className={this.state.previewKlasa} dangerouslySetInnerHTML={{__html: marked(this.state.markdown, { renderer: renderer })}} title={"It's a preview window, Sherlock ;)"}/>
-			
-			<Arrow id={"arrow"}/>
-	
+			<div id="inner2" ref={this.myInput} className="grid-container animated zoomIn" style={{height: this.state.inner2H}} onDoubleClick={this.inner2Height}>
+				
+				{EditorHead1}
+				{Editor1}
+				{PreviewHead1}
+				{Preview1}
+				{BtnEraser1}
+				{Arrow1}
+				
 			</div>
 					
 		);
+	}
+	if(this.state.myWidth>768){
+		console.log("Normal");
+		console.log(this.state.myWidth);
+		return (
+				
+			<div id="inner2" ref={this.myInput} className="grid-container animated zoomIn" style={{height: this.state.inner2H}} onDoubleClick={this.inner2Height}>
+				
+				{EditorHead1}
+				{PreviewHead1}
+				{BtnEraser1}
+				{Editor1}
+				{Preview1}
+				{Arrow1}
+				
+			</div>
+					
+		);
+	}
 	}
 	
 };
