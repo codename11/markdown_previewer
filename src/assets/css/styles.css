@@ -24,7 +24,7 @@ body {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center bottom;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .grid-container {
