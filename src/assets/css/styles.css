@@ -88,7 +88,7 @@ body {
   font-family: "Russo One" !important;
   font-style: oblique !important;
   font-weight: 700 !important;
-  font-size: 2em !important;
+  font-size: 3em !important;
   margin-bottom: 10px;
   padding-bottom: 0px;
   width: 100%;
@@ -212,6 +212,20 @@ blockquote {
   .insignia, .insignia:hover {
     letter-spacing: 0px !important;
     font-size: 1em !important;
+  }
+
+  #item1, #item2 {
+    margin-top: 32px !important;
+  }
+}
+@media only screen and (max-width: 560px) {
+  #item1, #item2 {
+    margin-top: 33px !important;
+  }
+}
+@media only screen and (max-width: 440px) {
+  #item1, #item2 {
+    margin-top: 35px !important;
   }
 }
 
