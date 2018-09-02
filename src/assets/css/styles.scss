@@ -18,7 +18,7 @@ $car: auto;
 
 #root{
 	width: $percentage;
-	font-size: 1.5em;
+	//font-size: 1.5em;
 }
 
 body, html {
@@ -102,7 +102,7 @@ body{
 	background-color: #fcf8e3;
 	min-height: 50px;
 	border-bottom: none;
-	margin-top: 30px !important;
+	margin-top: 10px !important;
 	padding-top: 10px !important;
 }
 
@@ -204,49 +204,25 @@ blockquote{
 }
 
 @media only screen and (max-width: 768px) {
-  img {
-    width: 100%;
-  }
+    img{
+		width: 100%;
+	}
+	
+	#ggED{
+		text-align: left;
+	}
 
-  #ggED {
-    text-align: left;
-  }
-
-  #ggPrev {
-    text-align: right;
-  }
-
-  .insignia,
-  .insignia:hover {
-    letter-spacing: 0px !important;
-    font-size: 1em !important;
-  }
-
-  #root {
-    font-size: 1.25em;
-  }
-  #item1, #item2 {
-    margin-top: 32px !important;
-  }
-}
-
-@media only screen and (max-width: 560px) {
-  #root {
-    font-size: 0.8em;
-  }
-#item1, #item2 {
-    margin-top: 33px !important;
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  #root {
-    font-size: 0.6em;
-  }
-#item1, #item2 {
-    margin-top: 35px !important;
-  }
-  #item2 {
-    margin-left: 15%;
-  }
+	#ggPrev{
+		text-align: right;
+	}
+	
+	.insignia, .insignia:hover{
+		letter-spacing: 0px !important;
+		font-size: 1em !important;
+	}
+	
+	#root{
+		//font-size: 1.25em;
+	}
+	
 }
