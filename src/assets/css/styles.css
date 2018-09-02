@@ -12,7 +12,6 @@
 
 #root {
   width: 100%;
-  font-size: 1.5em;
 }
 
 body, html {
@@ -96,7 +95,7 @@ body {
   background-color: #fcf8e3;
   min-height: 50px;
   border-bottom: none;
-  margin-top: 30px !important;
+  margin-top: 10px !important;
   padding-top: 10px !important;
 }
 
@@ -210,40 +209,9 @@ blockquote {
     text-align: right;
   }
 
-  .insignia,
-.insignia:hover {
+  .insignia, .insignia:hover {
     letter-spacing: 0px !important;
     font-size: 1em !important;
-  }
-
-  #root {
-    font-size: 1.25em;
-  }
-
-  #item1, #item2 {
-    margin-top: 32px !important;
-  }
-}
-@media only screen and (max-width: 560px) {
-  #root {
-    font-size: 0.8em;
-  }
-
-  #item1, #item2 {
-    margin-top: 33px !important;
-  }
-}
-@media only screen and (max-width: 440px) {
-  #root {
-    font-size: 0.6em;
-  }
-
-  #item1, #item2 {
-    margin-top: 35px !important;
-  }
-
-  #item2 {
-    margin-left: 15%;
   }
 }
 
