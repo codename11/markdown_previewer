@@ -190,6 +190,10 @@ code {
   color: #e83e8c !important;
 }
 
+pre {
+  background-color: #d6e9c6;
+}
+
 blockquote {
   border-left: 2px solid black;
   padding-left: 5px;
@@ -215,31 +219,19 @@ blockquote {
   }
 
   #item1, #item2 {
-    /*margin-top: 32px !important;*/
-    margin-top: 25px !important;
+    margin-top: 32px !important;
+    /*margin-top: 25px !important;*/
   }
 }
-/*
 @media only screen and (max-width: 560px) {
-  #root {
-    //font-size: 0.8em;
-  }
-#item1, #item2 {
+  #item1, #item2 {
     margin-top: 33px !important;
   }
 }
-
 @media only screen and (max-width: 440px) {
-  #root {
-    //font-size: 0.6em;
-  }
-#item1, #item2 {
+  #item1, #item2 {
     margin-top: 35px !important;
   }
-  #item2 {
-    //margin-left: 15%;
-  }
 }
-*/
 
 /*# sourceMappingURL=styles.css.map */
