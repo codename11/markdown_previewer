@@ -215,18 +215,31 @@ blockquote {
   }
 
   #item1, #item2 {
-    margin-top: 32px !important;
+    /*margin-top: 32px !important;*/
+    margin-top: 25px !important;
   }
 }
+/*
 @media only screen and (max-width: 560px) {
-  #item1, #item2 {
+  #root {
+    //font-size: 0.8em;
+  }
+#item1, #item2 {
     margin-top: 33px !important;
   }
 }
+
 @media only screen and (max-width: 440px) {
-  #item1, #item2 {
+  #root {
+    //font-size: 0.6em;
+  }
+#item1, #item2 {
     margin-top: 35px !important;
   }
+  #item2 {
+    //margin-left: 15%;
+  }
 }
+*/
 
 /*# sourceMappingURL=styles.css.map */
